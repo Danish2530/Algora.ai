@@ -1,0 +1,19 @@
+# Netlify Configuration File
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # The directory where Netlify runs the build command and installs dependencies.
+  base = "client"
+
+  # The build command to run. Netlify runs this command in the base directory.
+  command = "npm run build"
+
+  # The directory to publish, relative to the base directory.
+  publish = "dist"
+
+# Support Single Page Application (SPA) routing.
+# This redirects all URL requests to index.html so React Router can handle client-side routing.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
